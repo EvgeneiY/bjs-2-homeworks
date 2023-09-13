@@ -18,7 +18,7 @@ function solveEquation(a, b, c) {
 
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-	let;
+	let totalAmount;
 
 	percent = +percent;
 	contribution = +contribution;
@@ -26,7 +26,7 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 	countMonths = +countMonths;
 
 	let monthlyPartPercent = (percent / 100) / 12;
-	let initialPayment = amount - contribution; // Начальный взнос
+	let initialPayment = amount - contribution; // начальный взнос
 	let monthFee = initialPayment * (monthlyPartPercent + (monthlyPartPercent / (((1 + monthlyPartPercent) ** countMonths) - 1))); // Ежемесячная оплата
 	totalAmount = +(monthFee * countMonths).toFixed(2); // Общая сумма
 	return totalAmount;
